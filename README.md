@@ -5,10 +5,10 @@ Repositori ini dibuat untuk memenuhi tugas praktikum Pemrograman Berbasis Platfo
 Nama saya Septiana Wulandari. Saya merupakan mahasiswa Program Studi Informatika di Universitas Madura.
 
 ## Biodata
-Nama : Septiana Wulandari 
-Program Studi : Informatika
-Perguruan Tinggi : Universitas Madura
 
+- **Nama:** Septiana Wulandari
+- **Program Studi:** Informatika
+- **Perguruan Tinggi:** Universitas Madura
 
-Vidio Praktikum 
-https://docs.google.com/document/d/1oYECjfCRUb8DOZ6ra1_02lXo1zFvahu2FC3BxVrDies/edit?usp=sharing
+## Video Praktikum
+(https://docs.google.com/document/d/1OYCjfCRUb8DOZ6ra1_02Xo1zvahu2FC3bXrVdjes/edit?usp=sharing)
