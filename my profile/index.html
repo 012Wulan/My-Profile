@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff3f8">
+  <title>Septiana Wulandari | My Profile</title>
+
+  <style>
+    :root {
+      --pink: #e94f98;
+      --pink-dark: #a82d68;
+      --pink-soft: #fff0f6;
+      --pink-light: #ffd8e9;
+      --white: #ffffff;
+      --text: #402b38;
+      --muted: #806a77;
+      --border: #f2d4e2;
+      --shadow: 0 10px 35px rgba(190, 67, 126, .09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fff9fc;
+      color: var(--text);
+      line-height: 1.7;
+      transition: background .3s, color .3s;
+    }
+
+    a {
+      color: var(--pink-dark);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      transition: .25s;
+    }
+
+    a:hover {
+      color: var(--pink);
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 249, 252, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--pink-dark);
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: .9rem;
+    }
+
+    .theme-button {
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 8px 12px;
+      cursor: pointer;
+      background: var(--white);
+      color: var(--pink-dark);
+    }
+
+    .hero {
+      margin: 35px auto;
+      padding: clamp(28px, 6vw, 65px);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 85% 15%, #ffcae1 0, transparent 32%),
+        linear-gradient(135deg, #ffe5f0, #fff7fb 60%, #f8d6e7);
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 35px;
+      border: 1px solid #f7d6e5;
+    }
+
+    .eyebrow {
+      color: var(--pink-dark);
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: .78rem;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 15px 0;
+    }
+
+    .gradient-text {
+      color: var(--pink);
+    }
+
+    .hero p {
+      color: #725766;
+      max-width: 520px;
+      margin-bottom: 22px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 19px;
+      border-radius: 12px;
+      background: var(--pink);
+      color: white;
+      font-weight: 700;
+      border: 1px solid var(--pink);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .button:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px #e94f9840;
+      text-decoration: none;
+    }
+
+    .button-outline {
+      background: white;
+      color: var(--pink-dark);
+    }
+
+    .button-outline:hover {
+      color: var(--pink-dark);
+    }
+
+    .profile-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-circle {
+      width: min(245px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      padding: 8px;
+      border: 3px solid var(--pink);
+      background: white;
+      box-shadow: 0 15px 40px #d94c9130;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .profile-circle img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-placeholder {
+      color: var(--pink-dark);
+      padding: 15px;
+      font-size: .9rem;
+    }
+
+    .section {
+      padding: 35px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 23px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      line-height: 1.3;
+      margin-bottom: 7px;
+    }
+
+    .section-heading p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 11px;
+      background: var(--pink-soft);
+      color: var(--pink-dark);
+      margin-right: 8px;
+      font-size: .9rem;
+    }
+
+    .skill-grid,
+    .project-grid,
+    .identity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .skill-item {
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-top: 12px;
+    }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 11px;
+      border-radius: 30px;
+      background: var(--pink-soft);
+      color: var(--pink-dark);
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .progress {
+      height: 7px;
+      border-radius: 20px;
+      background: #f8e5ee;
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #f4a0c6, #d83d88);
+    }
+
+    .code-box {
+      background: #2a1727;
+      color: #ffd8e9;
+      padding: 20px;
+      border-radius: 14px;
+      overflow-x: auto;
+      margin: 15px 0;
+      font: .88rem/1.9 Consolas, monospace;
+      white-space: pre;
+    }
+
+    .notice {
+      padding: 13px 15px;
+      border-radius: 12px;
+      background: var(--pink-soft);
+      border-left: 4px solid var(--pink);
+      margin: 14px 0;
+      font-size: .92rem;
+    }
+
+    .screenshot {
+      width: 100%;
+      display: block;
+      border: 1px dashed var(--pink);
+      border-radius: 13px;
+      margin: 15px 0;
+      min-height: 100px;
+      object-fit: contain;
+      background: var(--pink-soft);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--white);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 520px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--pink-soft);
+      color: var(--pink-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .identity-item {
+      background: var(--pink-soft);
+      padding: 16px;
+      border-radius: 13px;
+    }
+
+    .identity-item small {
+      display: block;
+      color: var(--muted);
+    }
+
+    .identity-item strong {
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #3c2033;
+      color: #ffe5f0;
+      text-align: center;
+      padding: 32px 15px;
+    }
+
+    footer a {
+      color: #ffacd0;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    body.dark {
+      --white: #251b25;
+      --text: #fff0f7;
+      --muted: #d0b7c7;
+      --border: #493044;
+      --pink-soft: #382334;
+      --shadow: 0 10px 35px #00000020;
+      background: #19121a;
+      color: var(--text);
+    }
+
+    body.dark header {
+      background: rgba(25, 18, 26, .94);
+    }
+
+    body.dark .hero {
+      background: linear-gradient(135deg, #3d2338, #281b2a);
+      border-color: var(--border);
+    }
+
+    body.dark .hero p {
+      color: #e0c8d8;
+    }
+
+    body.dark .button-outline,
+    body.dark .theme-button {
+      background: #382334;
+      color: #ffd8e9;
+      border-color: var(--border);
+    }
+
+    body.dark .table-wrap {
+      background: var(--white);
+    }
+
+    body.dark th {
+      background: var(--pink-soft);
+    }
+
+    body.dark .identity-item {
+      background: var(--pink-soft);
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: 92%;
+      }
+
+      nav {
+        padding: 12px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: .8rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 25px;
+        padding: 27px 20px;
+      }
+
+      .hero p {
+        margin-inline: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .profile-wrap {
+        grid-row: 1;
+      }
+
+      .profile-circle {
+        width: 165px;
+      }
+
+      .skill-grid,
+      .project-grid,
+      .identity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 19px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">wulan.dev ♡</a>
+
+      <div class="nav-links">
+        <a href="#motivasi">Tentang</a>
+        <a href="#kemampuan">Skill</a>
+        <a href="#proyek">Proyek</a>
+        <button class="theme-button" id="themeToggle"
+                type="button" aria-label="Ganti tema">
+          ☾ Tema
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div>
+        <span class="eyebrow">Hello / 012Wulan</span>
+        <h1>Hi, I'm <span class="gradient-text">Wulan.</span></h1>
+        <p>
+          Mahasiswa Teknik Informatika yang sedang belajar,
+          bereksplorasi, dan mengembangkan kemampuan di bidang
+          pemrograman untuk membuat teknologi yang bermanfaat.
+        </p>
+
+        <div class="buttons">
+          <a class="button"
+             href="https://github.com/012Wulan"
+             target="_blank" rel="noopener noreferrer">
+            GitHub Saya ↗
+          </a>
+          <a class="button button-outline" href="#identitas">
+            Kenali Saya
+          </a>
+        </div>
+      </div>
+
+      <div class="profile-wrap">
+        <div class="profile-circle">
+          <!-- Ganti foto-profil.jpg dengan foto milikmu -->
+          <img src="wu.jpeg"
+               alt="Foto profil Septiana Wulandari"
+               onerror="this.style.display='none';
+               this.nextElementSibling.style.display='block';">
+
+          <div class="profile-placeholder" style="display:none">
+            ♡<br>
+            Foto Profil Wulan<br>
+            <small>Tambahkan foto-profil.jpg</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. MOTIVASI -->
+    <section class="section" id="motivasi">
+      <div class="section-heading">
+        <h2><span class="number">01</span> Motivasi Hidup</h2>
+        <p>Alasan saya terus belajar dan berkembang.</p>
+      </div>
+
+      <div class="card">
+        <h3>Small steps, big dreams. ♡</h3>
+        <p>
+          Saya ingin terus mengembangkan kemampuan di bidang
+          teknologi informasi supaya bisa membuat aplikasi yang
+          bermanfaat dan menyelesaikan masalah di sekitar saya.
+          Saya juga ingin membuktikan bahwa dengan terus belajar,
+          berusaha, dan tidak mudah menyerah, saya bisa meraih
+          cita-cita dan membanggakan keluarga.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. KEMAMPUAN TEKNOLOGI -->
+    <section class="section" id="kemampuan">
+      <div class="section-heading">
+        <h2><span class="number">02</span> Kemampuan Teknologi</h2>
+        <p>Teknologi yang sudah dipelajari dan yang sedang saya pelajari.</p>
+      </div>
+
+      <div class="skill-grid">
+        <div class="card">
+          <h3>♡ Kemampuan yang Dipelajari</h3>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <strong>HTML</strong>
+              <span class="badge">Pemula</span>
+            </div>
+            <div class="progress"><span style="width:35%"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <strong>CSS</strong>
+              <span class="badge">Pemula</span>
+            </div>
+            <div class="progress"><span style="width:35%"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <strong>PHP & SQL</strong>
+              <span class="badge">Pemula</span>
+            </div>
+            <div class="progress"><span style="width:30%"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <strong>Git & GitHub</strong>
+              <span class="badge">Pemula</span>
+            </div>
+            <div class="progress"><span style="width:25%"></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>♡ Sedang Dipelajari</h3>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <strong>Dart</strong>
+              <span class="badge">Belajar</span>
+            </div>
+            <p class="muted">Mempelajari dasar bahasa Dart.</p>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <strong>Flutter</strong>
+              <span class="badge">Belajar</span>
+            </div>
+            <p class="muted">Belajar membuat aplikasi multiplatform.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+<!-- 3. PROYEK -->
+<section class="section" id="proyek">
+  <div class="section-heading">
+    <h2><span class="number">03</span> Proyek yang Telah Dibuat</h2>
+    <p>
+      Beberapa proyek yang menjadi bagian dari perjalanan
+      saya dalam belajar pemrograman.
+    </p>
+  </div>
+
+  <div class="project-grid">
+
+    <!-- PROYEK 1: PETA WISATA MADURA -->
+    <article class="card">
+      <div style="display:flex; justify-content:space-between;
+                  align-items:center; gap:8px; flex-wrap:wrap;">
+        <span class="badge">Project 01</span>
+        <span class="badge">
+          Web GIS
+        </span>
+      </div>
+
+      <h3 style="margin-top:18px;">
+        <span class="number">01</span> Peta Wisata Madura
+      </h3>
+
+      <p>
+        Aplikasi web untuk menampilkan informasi dan lokasi
+        tempat wisata di wilayah Madura menggunakan peta
+        interaktif. Proyek kelompok ini memiliki fitur
+        pencarian, filter kabupaten, dan pengelolaan data wisata.
+      </p>
+
+      <div style="margin-top:15px;">
+        <p><strong>Peran:</strong> Backend Developer</p>
+        <p><strong>Teknologi:</strong></p>
+        <div style="display:flex; flex-wrap:wrap; gap:7px; margin-top:8px;">
+          <span class="badge">PHP Native</span>
+          <span class="badge">MySQL</span>
+          <span class="badge">Leaflet</span>
+          <span class="badge">Bootstrap 5</span>
+        </div>
+      </div>
+
+      <div class="notice">
+        Status: proyek kelompok telah selesai dikerjakan.
+      </div>
+
+      <div class="buttons">
+        <a class="button" href="https://github.com/012Wulan"
+           target="_blank" rel="noopener noreferrer">
+          Lihat GitHub ↗
+        </a>
+      </div>
+    </article>
+
+    <!-- PROYEK 2: CRUD DATA SEKOLAH -->
+    <article class="card">
+      <div style="display:flex; justify-content:space-between;
+                  align-items:center; gap:8px; flex-wrap:wrap;">
+        <span class="badge">Project 02</span>
+        <span class="badge">Web Developer</span>
+      </div>
+
+      <h3 style="margin-top:18px;">
+        <span class="number">02</span> Aplikasi CRUD Data Sekolah
+      </h3>
+
+      <p>
+        Aplikasi untuk mempelajari pengelolaan data sekolah
+        melalui operasi tambah, tampil, ubah, dan hapus data.
+        Aplikasi ini menggunakan PHP dan MySQL yang terhubung
+        dengan basis data.
+      </p>
+
+      <div style="margin-top:15px;">
+        <p><strong>Peran:</strong> Pengembang Individu </p>
+        <p><strong>Teknologi:</strong></p>
+        <div style="display:flex; flex-wrap:wrap; gap:7px; margin-top:8px;">
+          <span class="badge">PHP</span>
+          <span class="badge">MySQL</span>
+          <span class="badge">PDO</span>
+          <span class="badge">HTML/CSS</span>
+        </div>
+      </div>
+
+      <div class="notice">
+          Status: proyek telah selesai dikerjakan.
+      </div>
+
+      <div class="buttons">
+        <a class="button" href="https://github.com/012Wulan"
+           target="_blank" rel="noopener noreferrer">
+          Lihat GitHub ↗
+        </a>
+      </div>
+    </article>
+
+    <!-- PROYEK 3: GAME RANGKAI KATA -->
+    <article class="card">
+      <div style="display:flex; justify-content:space-between;
+                  align-items:center; gap:8px; flex-wrap:wrap;">
+        <span class="badge">Project 03</span>
+        <span class="badge">Game Development</span>
+      </div>
+
+      <h3 style="margin-top:18px;">
+        <span class="number">03</span> Game Rangkai Kata
+      </h3>
+
+      <p>
+        Game edukasi berbasis web yang mengajak pengguna
+        menyusun huruf menjadi kata yang benar. Game ini
+        memiliki beberapa level, batas waktu, sistem nyawa,
+        dan fitur permainan interaktif.
+      </p>
+
+      <div style="margin-top:15px;">
+        <p><strong>Peran:</strong> Anggota Tim Pengembang</p>
+        <p><strong>Teknologi:</strong></p>
+        <div style="display:flex; flex-wrap:wrap; gap:7px; margin-top:8px;">
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">JavaScript</span>
+        </div>
+      </div>
+      
+      <div class="notice">
+        Status: proyek kelompok telah selesai dan siap digunakan.
+      </div>
+
+      <div class="buttons">
+        <a class="button" href="https://github.com/012Wulan"
+           target="_blank" rel="noopener noreferrer">
+          Lihat GitHub ↗
+        </a>
+      </div>
+    </article>
+
+    <!-- PROYEK 4: SIAKAD -->
+    <article class="card">
+      <div style="display:flex; justify-content:space-between;
+                  align-items:center; gap:8px; flex-wrap:wrap;">
+        <span class="badge">Project 04</span>
+        <span class="badge">Sistem Informasi</span>
+      </div>
+
+      <h3 style="margin-top:18px;">
+        <span class="number">04</span> Sistem Informasi Akademik
+      </h3>
+
+      <p>
+        Sistem informasi akademik (SIAKAD) untuk membantu
+        pengelolaan informasi dan data akademik secara
+        terstruktur. Fitur dan cakupan sistem disesuaikan
+        dengan kebutuhan proyek yang dikembangkan.
+      </p>
+
+      <div style="margin-top:15px;">
+        <p><strong>Peran:</strong> Anggota Tim Pengembang</p>
+        <p><strong>Teknologi:</strong></p>
+        <div style="display:flex; flex-wrap:wrap; gap:7px; margin-top:8px;">
+          <span class="badge">PHP</span>
+          <span class="badge">MySQL</span>
+          <span class="badge">HTML/CSS</span>
+        </div>
+      </div>
+
+      <div class="notice">
+        Status: proyek kelompok telah selesai dan siap digunakan.
+      </div>
+
+      <div class="buttons">
+        <a class="button" href="https://github.com/012Wulan"
+           target="_blank" rel="noopener noreferrer">
+          Lihat GitHub ↗
+        </a>
+      </div>
+    </article>
+
+    <!-- PROYEK 5: APLIKASI KASIR -->
+    <article class="card">
+      <div style="display:flex; justify-content:space-between;
+                  align-items:center; gap:8px; flex-wrap:wrap;">
+        <span class="badge">Project 05</span>
+        <span class="badge">Sistem Infomasi Penjualan</span>
+      </div>
+
+      <h3 style="margin-top:18px;">
+        <span class="number">05</span> Aplikasi Kasir
+      </h3>
+
+      <p>
+        Aplikasi kasir berbasis web untuk membantu pengelolaan
+        data produk dan pencatatan transaksi penjualan.
+        Sistem ini dirancang untuk menghubungkan data produk,
+        transaksi, dan detail transaksi dalam basis data.
+      </p>
+
+      <div style="margin-top:15px;">
+        <p><strong>Peran:</strong> Anggota Tim Pengembang</p>
+        <p><strong>Teknologi:</strong></p>
+        <div style="display:flex; flex-wrap:wrap; gap:7px; margin-top:8px;">
+          <span class="badge">PHP Native</span>
+          <span class="badge">MySQL</span>
+          <span class="badge">HTML/CSS</span>
+        </div>
+      </div>
+      
+      <div class="notice">
+        Status: proyek kelompok telah selesai dan siap digunakan.
+      </div>
+      
+      <div class="buttons">
+        <a class="button" href="https://github.com/012Wulan"
+           target="_blank" rel="noopener noreferrer">
+          Lihat GitHub ↗
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+    <!-- 4. BUKTI COMMIT -->
+    <section class="section" id="commit">
+      <div class="section-heading">
+        <h2><span class="number">04</span> Bukti Commit GitHub</h2>
+        <p>Riwayat perubahan kode selama pengerjaan proyek.</p>
+      </div>
+
+      <div class="card">
+        <h3>♡ Dokumentasi Repositori</h3>
+        <p>
+          Bukti commit digunakan untuk menunjukkan perkembangan
+          proyek dari tahap awal hingga penyelesaian.
+        </p>
+
+        <div class="buttons">
+          <a class="button"
+             href="https://github.com/012Wulan"
+             target="_blank" rel="noopener noreferrer">
+            <span>GitHub 012Wulan ↗</span>
+          </a>
+        </div>
+
+        <div class="notice">
+          Setelah membuat repositori, buka halaman repositori,
+          pilih riwayat commit, lalu ambil tangkapan layar yang
+          menampilkan minimal tiga commit milikmu. Simpan gambar
+          dengan nama <strong>commits.png</strong> di folder biodata.
+        </div>
+
+        <!-- Gambar akan muncul setelah commits.png ditambahkan -->
+        <img class="screenshot"
+             src="commits.png"
+             alt="Tangkapan layar riwayat commit GitHub"
+             onerror="this.style.display='none';">
+
+        <h3 style="margin-top:20px">Contoh format git log</h3>
+        <p class="muted">
+          Jalankan perintah di terminal untuk menampilkan riwayat
+          commit yang sebenarnya.
+        </p>
+
+        <div class="code-box">$ git log --oneline -5</div>
+
+        <p>
+          <a href="https://docs.github.com/en/repositories"
+             target="_blank" rel="noopener noreferrer">
+            Panduan repositori GitHub ↗
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. RIWAYAT PENDIDIKAN -->
+    <section class="section" id="pendidikan">
+      <div class="section-heading">
+        <h2><span class="number">05</span> Riwayat Pendidikan</h2>
+        <p>Perjalanan pendidikan saya dari waktu ke waktu.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tahun</th>
+              <th>Sekolah / Perguruan Tinggi</th>
+              <th>Jurusan</th>
+              <th>Pencapaian</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>2024–Sekarang</td>
+              <td>Universitas Madura</td>
+              <td>Teknik Informatika</td>
+              <td>Mahasiswa aktif</td>
+            </tr>
+            <tr>
+              <td>2022-2024</td>
+              <td>SMK Negeri 3 Pamekasan </td>
+              <td>PPLG</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2019-2021</td>
+              <td>SMP Negeri 8 Pamekasan </td>
+              <td>Umum</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2013-2018</td>
+              <td>SD Plus Nurul Jadid </td>
+              <td>Umum</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6. IDENTITAS -->
+    <section class="section" id="identitas">
+      <div class="section-heading">
+        <h2><span class="number">06</span> Identitas Pribadi</h2>
+        <p>Sedikit informasi tentang pemilik portofolio ini.</p>
+      </div>
+
+      <div class="card">
+        <div class="identity-grid">
+          <div class="identity-item">
+            <small>Nama Lengkap</small>
+            <strong>Septiana Wulandari</strong>
+          </div>
+
+          <div class="identity-item">
+            <small>Nama Panggilan</small>
+            <strong>Wulan</strong>
+          </div>
+
+          <div class="identity-item">
+            <small>NIM</small>
+            <strong>2024520012</strong>
+          </div>
+
+          <div class="identity-item">
+            <small>Program Studi</small>
+            <strong>Teknik Informatika</strong>
+          </div>
+
+          <div class="identity-item">
+            <small>Perguruan Tinggi</small>
+            <strong>Universitas Madura</strong>
+          </div>
+
+          <div class="identity-item">
+            <small>GitHub</small>
+            <strong>
+              <a href="https://github.com/012Wulan"
+                 target="_blank" rel="noopener noreferrer">
+                @012Wulan
+              </a>
+            </strong>
+          </div>
+
+          <div class="identity-item">
+            <small>Lokasi</small>
+            <strong>Pamekasan, Jawa Timur</strong>
+          </div>
+
+          <div class="identity-item">
+            <small>Bidang yang Diminati</small>
+            <strong>Web Development & Business Intelligence</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. TAMPILAN MODERN -->
+    <section class="section" id="tampilan">
+      <div class="section-heading">
+        <h2><span class="number">07</span> Tampilan Modern</h2>
+        <p>Desain responsif dengan interaksi sederhana.</p>
+      </div>
+
+      <div class="card">
+        <h3>Design Features ♡</h3>
+
+        <div class="skill-item">
+          <strong>01. Responsive Layout</strong>
+          <p class="muted">
+            Tata letak menyesuaikan ukuran layar HP dan laptop.
+          </p>
+        </div>
+
+        <div class="skill-item">
+          <strong>02. Pink Gradient</strong>
+          <p class="muted">
+            Gradasi pink dan putih memberikan tampilan yang konsisten.
+          </p>
+        </div>
+
+        <div class="skill-item">
+          <strong>03. Interactive Elements</strong>
+          <p class="muted">
+            Tautan memiliki efek hover dan tombol tema dapat
+            mengubah tampilan terang menjadi gelap.
+          </p>
+        </div>
+
+        <div class="skill-item">
+          <strong>04. Card & Profile Design</strong>
+          <p class="muted">
+            Informasi ditata dalam kartu dan foto profil berbentuk
+            lingkaran dengan garis tepi pink.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. TEMA KONSISTEN -->
+    <section class="section" id="tema">
+      <div class="section-heading">
+        <h2><span class="number">08</span> Tema Pink Tech Stack</h2>
+        <p>Soft pink meets the world of technology.</p>
+      </div>
+
+      <div class="card">
+        <h3>♡ Alasan Memilih Tema</h3>
+
+        <p>
+          Saya memilih tema Pink Tech Stack karena warna pink
+          memberikan kesan lembut dan kreatif, sedangkan elemen
+          teknologi menggambarkan proses belajar saya sebagai
+          mahasiswa Teknik Informatika. Perpaduan warna pink,
+          putih, dan teks gelap digunakan secara konsisten agar
+          portofolio terlihat rapi, nyaman dibaca, dan tetap modern.
+        </p>
+
+        <div class="skill-grid" style="margin-top:18px">
+          <div class="skill-item">
+            <div class="skill-top">
+              <strong>Pink</strong>
+              <span class="badge">#E94F98</span>
+            </div>
+            <div class="progress">
+              <span style="width:100%"></span>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-top">
+              <strong>White</strong>
+              <span class="badge">#FFFFFF</span>
+            </div>
+            <div class="progress">
+              <span style="width:100%;background:#e8dce4"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-box">$ whoami
+012Wulan
+$ echo "Keep learning, keep growing ♡"</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Dibuat dengan ♥ oleh 012Wulan — P1 Pemrograman Platform</strong></p>
+    <p>Septiana Wulandari · Teknik Informatika</p>
+
+    <p>
+      <a href="https://github.com/012Wulan"
+         target="_blank" rel="noopener noreferrer">
+        GitHub Repository
+      </a>
+      &nbsp;·&nbsp;
+      <a href="#home">Kembali ke atas ↑</a>
+    </p>
+
+    <p>
+      <a href="GANTI_DENGAN_LINK_VIDEO"
+         target="_blank" rel="noopener noreferrer">
+        Video Dokumentasi Proyek
+      </a>
+    </p>
+
+    <p style="margin-top:16px;font-size:.8rem;color:#d9b6ca">
+      © 2026 · Made with love and code ♡
+    </p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+
+    themeToggle.addEventListener("click", function () {
+      document.body.classList.toggle("dark");
+
+      const isDark = document.body.classList.contains("dark");
+
+      themeToggle.textContent = isDark ? "☀ Tema" : "☾ Tema";
+      themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Aktifkan tema terang" : "Aktifkan tema gelap"
+      );
+    });
+  </script>
+
+</body>
+</html>
