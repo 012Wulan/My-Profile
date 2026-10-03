@@ -12,3 +12,6 @@ Nama saya Septiana Wulandari. Saya merupakan mahasiswa Program Studi Informatika
 
 ## Video Praktikum
 https://docs.google.com/document/d/1oYECjfCRUb8DOZ6ra1_02lXo1zFvahu2FC3BxVrDies/edit?usp=sharing
+
+## Pertemuan 2
+https://drive.google.com/drive/folders/1tERVnHL9LdwNgnpfEM2f-ziWamGhlCRg?usp=sharing
